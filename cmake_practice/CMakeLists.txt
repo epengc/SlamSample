@@ -20,5 +20,8 @@ add_library(hello SHARED ${PROJECT_SOURCE_DIR}/src/hello.cpp)
 # create the link to connect libraries with the main code
 target_link_libraries(sayHello hello)
 
+# put hello.h into /usr/local/include
+install(FILES ${PROJECT_SOURCE_DIR}/include/hello.h DESTINATION /usr/local/include)
 
-
+# put hello.so into /usr/local/lib
+install(TARGETS hello LIBRARY DESTINATION /usr/local/lib)

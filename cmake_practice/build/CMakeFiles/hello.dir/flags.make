@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIC
 
 CXX_DEFINES = -Dhello_EXPORTS
 
-CXX_INCLUDES = -I/home/epengc/Documents/SlamExample/cmake_practice/include 
+CXX_INCLUDES = -I/home/epengc/Documents/SlamSample/cmake_practice/include 
 
