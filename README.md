@@ -8,7 +8,8 @@ Create a Project named "cmake_practice" for a chance to writting CMakeList.txt f
 
 ## 6. Non Linear Optimization Problem
 ### 6.1 Status Estimation
-#### 6.1.1 Basic Status Estimation Equation
+#### 6.1.1 Basic Status Estimation Equation</center>
+
 Typical SLAM equation  
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\big\{ \begin{matrix} \mathbf{x}_{k} = \mathcal{F}(\mathbf{x}_{k-1}, \mathbf{u}_{k}) %2B \mathbf{w}_{k} \\ \mathbf{z}_{k,j} = \mathcal{H}(\mathbf{y}_{j},\mathbf{x}_{k}) %2B \mathbf{v}_{k,j}\end{matrix}}">    
@@ -33,6 +34,7 @@ For fomular <img src="https://render.githubusercontent.com/render/math?math=\col
 As the same thoery, for formular <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{z}_{k,j} = h(\mathbf{y}_{j},\mathbf{x}_{k}) %2B \mathbf{v}_{k,j}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\bullet}"> is <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{v}_{k,j}}">, and <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\mu}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{0}">. <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\Sigma}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{Q}_{k}}">.
 
 #### 6.1.2 Least Square Cost Fucntion
+
 If we use the assumed value and prior assumption of multi-dimension Gaussain Distribution together, combining with the least square solution, the errors would be:   
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\begin{matrix} e_{u,k} = x_{k} -f(x_{k-1}, u_{k}) \\ e_{z,j,k} = z_{k,j} -h(x_{k}, y_{j})\end{matrix}}">
@@ -44,9 +46,10 @@ And the cost function can be defined as:
 </p>
 
 ### 6.2 Least Sqaure Optimization
+
 When consider a general least square problem: 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\color{white}{\min_{x}F(x) = \frac{1}{2}||f(x)||^{2}_{2}}"> 
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}{\min_{x}F(x) = \frac{1}{2}\bigg\|f(x)\bigg\|^{2}_{2}}"> 
 </p>
 
 where, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x\in \mathbb{R}^{n}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{f}"> is any non-linear function:  
@@ -54,10 +57,11 @@ where, <img src="https://render.githubusercontent.com/render/math?math=\color{wh
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{f(x): \mathbb{R}^{n}\rightarrow \mathbb{R}}">
 </p>
 
-We have four steps to get the numerical solution:   
+We have four steps to get the numerical solution by iterations:   
 1. Giving a initialized value <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x_{0}}">
-
-
+2. For the <img src="https://render.githubusercontent.com/render/math?math=\color{white}{k_{th}}"> iteration, seeking a small increament <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\Delta x_{k}}"> to have <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\Delta x_{k} = \argmin \bigg\|f(x_{k} %2B \Delta x_{k})\bigg\|^{2}_{2}}">
+3. If <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\Delta x_{k}}"> is samller than the criterion, then stop.
+4. Else, let <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x_{k+1}=x_{k}%2B\Delta x_{k}}">.
 
 
 
