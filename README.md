@@ -82,6 +82,10 @@ So when keep direction of
 
 and set <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\lambda}"> to reduce the cost functon, we can get steepest descent method.
 
+But if we keep both first and second order component in Taylor series, the formula becomes   
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\ast} = arg min \big( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k %2B \frac{1}{2}\Delta x_k^T\mathbf{H}(x_k)\Delta x_k\big)}">
+</p>
 
 
 
