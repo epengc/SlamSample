@@ -66,7 +66,7 @@ We have four steps to get the numerical solution by iterations:
 #### 6.2.1 First Order and Second Order Gradient Solution
 If we have a Function <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{F}(x)}"> and study the monotonicity within the range <img src="https://render.githubusercontent.com/render/math?math=\color{red}{x_{k}%2B\Delta x_{k}}">, by using Taylor Series, we have  
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\color{red}{F(x_k%2B\Delta x_k) \arrpox F() %2B \mathbf{J}() %2B \mathbf{H}}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{F(x_k%2B\Delta x_k) \approx F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k %2B \frac{1}{2}\Delta x_k^T\mathbf{H}(x_k)\Delta x_k}">
 </p>
 
 
