@@ -69,6 +69,13 @@ If we have a Function <img src="https://render.githubusercontent.com/render/math
 <img src="https://render.githubusercontent.com/render/math?math=\color{red}{F(x_k%2B\Delta x_k) \approx F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k %2B \frac{1}{2}\Delta x_k^T\mathbf{H}(x_k)\Delta x_k}">
 </p>
 
+where, <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{J}}"> is the Jacobian matrix and <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{H}}"> is the Hessian matrix.  
+If we only keep the first order gradient coefficient in Taylor serires, we have  
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\star} = arg min \bigg\( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k\bigg\)}">
+</p>
+
+
 
 
 
