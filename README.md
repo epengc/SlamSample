@@ -75,6 +75,12 @@ If we only keep the first order gradient coefficient in Taylor serires, we have
 <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\ast} = arg min \big( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k \big)}">
 </p>
 
+So when keep direction of  
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\ast} = -\mathbf{J}(x_k)}">
+</p>
+
+and set <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\lambda}"> to reduce the cost functon, we can get steepest descent method.
 
 
 
