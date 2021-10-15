@@ -87,6 +87,7 @@ But if we keep both first and second order component in Taylor series, the formu
 <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\ast} = arg min \big( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k %2B \frac{1}{2}\Delta x_k^T\mathbf{H}(x_k)\Delta x_k\big)}">
 </p>
 
+The value of <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{H}\Delta x = -\mathbf{J}}"> will lead cost function down to smallest value.
 
 
 
