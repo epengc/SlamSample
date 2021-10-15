@@ -51,9 +51,11 @@ When consider a general least square problem:
 
 where, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x\in \mathbb{R}^{n}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{f}"> is any non-linear function:  
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\color{white}{f(x): \mathbb{R}^{n}\rightarrow \mathbb{R}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}{f(x): \mathbb{R}^{n}\rightarrow \mathbb{R}}">
 </p>
 
+We have four steps to get the numerical solution:   
+1. Giving a initialized value <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x_{0}}">
 
 
 
