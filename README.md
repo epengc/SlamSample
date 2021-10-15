@@ -8,6 +8,7 @@ Create a Project named "cmake_practice" for a chance to writting CMakeList.txt f
 
 ## 6. Non Linear Optimization Problem
 ### 6.1 Status Estimation
+#### 6.1.1 Basic Status Estimation Equation
 Typical SLAM equation  
 
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\big\{ \begin{matrix} \mathbf{x}_{k} = \mathcal{F}(\mathbf{x}_{k-1}, \mathbf{u}_{k}) %2B \mathbf{w}_{k} \\ \mathbf{z}_{k,j} = \mathcal{H}(\mathbf{y}_{j},\mathbf{x}_{k}) %2B \mathbf{v}_{k,j}\end{matrix}}">    
@@ -25,5 +26,25 @@ When <img src="https://render.githubusercontent.com/render/math?math=\color{whit
 For fomular <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{x}_{k} = f(\mathbf{x}_{k-1}, \mathbf{u}_{k}) %2B \mathbf{w}_{k}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\cdot}"> is <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{w}_{k}}">, and <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\mu}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{0}">. <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\Sigma}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{O}_{k}}">.
 
 As the same thoery, for formular <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{z}_{k,j} = h(\mathbf{y}_{j},\mathbf{x}_{k}) %2B \mathbf{v}_{k,j}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\cdot}"> is <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{v}_{k,j}}">, and <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\mu}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{0}">. <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{\Sigma}_{k}}"> is assumed to be <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\mathbf{Q}_{k}}">.
+
+#### 6.1.2 Least Square Cost Fucntion
+If we use the assumed value and prior assumption of multi-dimension Gaussain Distribution together, combining with the least square solution, the errors would be    
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}{\begin{matrix} e_{u,k} = x_{k} -f(x_{k-1}, u_{k}) \\ e_{z,j,k} = z_{k,j} -h(x_{k}, y_{j})\end{matrix}}">    
+And the cost function can be defined as    
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}{minJ(x,y)=\Sigma_{k}e^{T}_{k,u} O^{-1}_{k} e_{k,u} %2B \Sigma_{j}\Sigma_{k} e^{T}_{z, k, j} Q^{-1}_{k,j}e_{z,k,j}}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
