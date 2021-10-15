@@ -35,8 +35,8 @@ And the cost function can be defined as
 
 ### 6.2 Least Sqaure Optimization
 When consider a general least square problem:  
-<img src="https://render.githubusercontent.com/render/math?math=\color{white}{\min_{x}F(x) = \frac{1}{2}||f(x)||^{2}_{2}}">
-whenre, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x\in \mathbb{R}^{n}}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}{\min_{x}F(x) = \frac{1}{2}||f(x)||^{2}_{2}}">  
+whenre, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x\in \mathbb{R}^{n}}">, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{f}"> is any non-linear function <img src="https://render.githubusercontent.com/render/math?math=\color{white}{f(x): \mathbb{R}^{n}\rightarrow \mathbb{R}">.
 
 
 
