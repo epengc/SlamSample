@@ -63,7 +63,11 @@ We have four steps to get the numerical solution by iterations:
 3. If <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x_{k}}"> is samller than the criterion, then stop.
 4. Else, let <img src="https://render.githubusercontent.com/render/math?math=\color{red}{x_{k+1}=x_{k}%2B\Delta x_{k}}">.
 
-
+#### 6.2.1 First Order and Second Order Gradient Solution
+If we have a Function <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{F}(x)}"> and study the monotonicity within the range <img src="https://render.githubusercontent.com/render/math?math=\color{red}{x_{k}%2B\Delta x_{k}}">, by using Taylor Series, we have  
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{F(x_k%2B\Delta x_k) \arrpox F() %2B \mathbf{J}() %2B \mathbf{H}}">
+</p>
 
 
 
