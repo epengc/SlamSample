@@ -34,9 +34,9 @@ And the cost function can be defined as
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{minJ(x,y)=\Sigma_{k}e^{T}_{k,u} O^{-1}_{k} e_{k,u} %2B \Sigma_{j}\Sigma_{k} e^{T}_{z, k, j} Q^{-1}_{k,j}e_{z,k,j}}">
 
 ### 6.2 Least Sqaure Optimization
-When consider a general least square problem  
+When consider a general least square problem:  
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}{\min_{x}F(x) = \frac{1}{2}||f(x)||^{2}_{2}}">
-
+whenre, <img src="https://render.githubusercontent.com/render/math?math=\color{white}{x\in \mathbb{R}^{n}}">
 
 
 
