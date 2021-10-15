@@ -72,7 +72,7 @@ If we have a Function <img src="https://render.githubusercontent.com/render/math
 where, <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{J}}"> is the Jacobian matrix and <img src="https://render.githubusercontent.com/render/math?math=\color{red}{\mathbf{H}}"> is the Hessian matrix.  
 If we only keep the first order gradient coefficient in Taylor serires, we have  
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\star} = arg min \bigg\( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k\bigg\)}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{red}{\Delta x^{\ast} = arg min \bigg\( F(x_k) %2B \mathbf{J}(x_k)^{T}\Delta x_k\bigg\)}">
 </p>
 
 
