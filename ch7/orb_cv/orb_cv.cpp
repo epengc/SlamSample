@@ -38,13 +38,13 @@ int main(int argc, char** argv)
     cout<<"extract ORB cost = "<<time_used.count()<<" seconds. "<<endl;
 
     Mat outimag1;
-    drawKeypoints(img_1, keypoints_1, outimg1, Scalar::all(-1), DrawMatchesFlags::DEFAULT);
-    imshow("ORB features", outimg1);
+    drawKeypoints(img_1, keypoints_1, outimag1, Scalar::all(-1), DrawMatchesFlags::DEFAULT);
+    imshow("ORB features", outimag1);
     
     // Third step: to do the matcher work of BRIEF descriptor by using Hamming distance
     vector<DMatch> matches;
     t1 = chrono::steady_clock::now();
-    matcher->match(descriptors_1, descriptor_2, matches);
+    matcher->match(descriptors_1, descriptors_2, matches);
     t2 = chrono::steady_clock::now();
     time_used = chrono::duration_cast<chrono::duration<double>>(t2-t1);
     cout<<"match ORB cost ="<<time_used.count()<<" seconds. "<<endl;
@@ -62,7 +62,7 @@ int main(int argc, char** argv)
     // avoid the too small distance values
     std::vector<DMatch> good_matches;
     for(int i = 0; i<descriptors_1.rows; i++){
-        if(matches[i].distance <= max(2*min_distance, 30.0)){
+        if(matches[i].distance <= max(2*min_dist, 30.0)){
             good_matches.push_back(matches[i]);}
     }
     
@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     Mat img_match;
     Mat img_goodmatch;
     drawMatches(img_1, keypoints_1, img_2, keypoints_2, matches, img_match);
-    drawMatches(img_2, keypoints_1, img_2, keypoints_2, good_mathces, img_goodmatch);
+    drawMatches(img_2, keypoints_1, img_2, keypoints_2, good_matches, img_goodmatch);
     imshow("all matches", img_match);
     imshow("good matches", img_goodmatch);
     waitKey(0);
