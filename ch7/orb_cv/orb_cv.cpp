@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     Mat outimag1;
     drawKeypoints(img_1, keypoints_1, outimag1, Scalar::all(-1), DrawMatchesFlags::DEFAULT);
     imshow("ORB features", outimag1);
-    
+    imwrite("orb_freatures.jpg", outimag1);
     // Third step: to do the matcher work of BRIEF descriptor by using Hamming distance
     vector<DMatch> matches;
     t1 = chrono::steady_clock::now();
@@ -72,7 +72,9 @@ int main(int argc, char** argv)
     drawMatches(img_1, keypoints_1, img_2, keypoints_2, matches, img_match);
     drawMatches(img_2, keypoints_1, img_2, keypoints_2, good_matches, img_goodmatch);
     imshow("all matches", img_match);
+    imwrite("all_matches.jpg", img_match);
     imshow("good matches", img_goodmatch);
+    imwrite("good_matches.jpg", img_goodmatch);
     waitKey(0);
 
     return 0;
