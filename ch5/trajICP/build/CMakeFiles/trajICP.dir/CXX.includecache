@@ -19,7 +19,11 @@ Eigen/Core
 -
 Eigen/Dense
 -
+Eigen/Geometry
+-
 fstream
+-
+pangolin/pangolin.h
 -
 
 /usr/include/eigen3/Eigen/Cholesky
