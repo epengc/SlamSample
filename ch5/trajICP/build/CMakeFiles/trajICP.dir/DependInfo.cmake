@@ -10,7 +10,13 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "HAVE_EIGEN"
+  "HAVE_GLEW"
+  "HAVE_PYTHON"
+  "PANGO_DEFAULT_WIN_URI=\"wayland\""
+  "PANGO_DEFAULT_WIN_URI=\"x11\""
   "SOPHUS_USE_BASIC_LOGGING=1"
+  "_LINUX_"
   )
 
 # The include file search paths:

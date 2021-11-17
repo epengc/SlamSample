@@ -79,6 +79,20 @@ trajICP_EXTERNAL_OBJECTS =
 
 trajICP: CMakeFiles/trajICP.dir/trajICP.cpp.o
 trajICP: CMakeFiles/trajICP.dir/build.make
+trajICP: /usr/local/lib/libpango_python.so
+trajICP: /usr/local/lib/libpango_plot.so
+trajICP: /usr/local/lib/libpango_display.so
+trajICP: /usr/local/lib/libpango_windowing.so
+trajICP: /usr/local/lib/libpango_opengl.so
+trajICP: /usr/lib/x86_64-linux-gnu/libGLEW.so
+trajICP: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+trajICP: /usr/lib/x86_64-linux-gnu/libGLX.so
+trajICP: /usr/lib/x86_64-linux-gnu/libGLU.so
+trajICP: /usr/local/lib/libpango_vars.so
+trajICP: /usr/local/lib/libpango_video.so
+trajICP: /usr/local/lib/libpango_image.so
+trajICP: /usr/local/lib/libpango_packetstream.so
+trajICP: /usr/local/lib/libpango_core.so
 trajICP: CMakeFiles/trajICP.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/epengc/Documents/SlamSample/ch5/trajICP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable trajICP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trajICP.dir/link.txt --verbose=$(VERBOSE)
