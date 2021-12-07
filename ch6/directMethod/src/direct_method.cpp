@@ -1,12 +1,21 @@
 #include <opencv2/opencv.hpp>
-#include <sophus/se3.h>
+#include <sophus/se3.hpp>
 #include <Eigen/Core>
 #include <vector>
 #include <string>
 #include <boost/format.hpp>
-#include <pangolin/pangolin.h>
+#include <pangolin/var/var.h>
+#include <pangolin/var/varextra.h>
+#include <pangolin/gl/gl.h>
+#include <pangolin/display/display.h>
+#include <pangolin/display/view.h>
+#include <pangolin/display/widgets.h>
+#include <pangolin/display/default_font.h>
+#include <pangolin/handler/handler.h>
 
 using namespace std;
+using namespace Eigen;
+using namespace Sophus;
 
 typedef vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> VecVector2d;
 
@@ -16,9 +25,9 @@ double fx = 718.856, fy = 718.856, cx = 607.1928, cy = 185.2157;
 // 基线
 double baseline = 0.573;
 // paths
-string left_file = "../include/left.png";
-string disparity_file = "./include/disparity.png";
-boost::format fmt_others("../include/%06d.png");    // other files
+string left_file = "./left.png";
+string disparity_file = "./disparity.png";
+boost::format fmt_others("./%06d.png");    // other files
 
 // useful typedefs
 typedef Eigen::Matrix<double, 6, 6> Matrix6d;
@@ -39,7 +48,7 @@ void DirectPoseEstimationMultiLayer(
         const cv::Mat &img2,
         const VecVector2d &px_ref,
         const vector<double> depth_ref,
-        Sophus::SE3 &T21
+        Sophus::SE3d &T21
 );
 
 // TODO implement this function
@@ -56,7 +65,7 @@ void DirectPoseEstimationSingleLayer(
         const cv::Mat &img2,
         const VecVector2d &px_ref,
         const vector<double> depth_ref,
-        Sophus::SE3 &T21
+        Sophus::SE3d &T21
 );
 
 // bilinear interpolation
@@ -95,7 +104,7 @@ int main(int argc, char **argv) {
     }
 
     // estimates 01~05.png's pose using this information
-    Sophus::SE3 T_cur_ref;
+    Sophus::SE3d T_cur_ref;
 
     for (int i = 1; i < 6; i++) {  // 1~10
         cv::Mat img = cv::imread((fmt_others % i).str(), 0);
@@ -109,7 +118,7 @@ void DirectPoseEstimationSingleLayer(
         const cv::Mat &img2,
         const VecVector2d &px_ref,
         const vector<double> depth_ref,
-        Sophus::SE3 &T21
+        Sophus::SE3d &T21
 ) {
 
     // parameters
@@ -133,18 +142,18 @@ void DirectPoseEstimationSingleLayer(
             // compute the projection in the second image
             // TODO START YOUR CODE HERE
             double X_ref = depth_ref[i]*(px_ref[i][0]-cx)/fx;
-            double Y_ref = depth_ref[i]*(py_ref[i][1]-cy)/fy;
+            double Y_ref = depth_ref[i]*(px_ref[i][1]-cy)/fy;
             double Z_ref = depth_ref[i];
             Matrix4d T_21 = T21.matrix();
-            X_cur = T_21(0,0)*X_ref+T_21(0,1)*Y_ref+T_21(0,2)*Z_ref+T_21(0,3);
-            Y_cur = T_21(1,0)*X_ref+T_21(1,1)*Y_ref+T_21(1,2)*Z_ref+T_21(1,3);
-            Z_cur = T_21(2,0)*X_ref+T_21(2,1)*Y_ref+T_21(2,2)*Z_ref+T_21(2,3);
+            double X_cur = T_21(0,0)*X_ref+T_21(0,1)*Y_ref+T_21(0,2)*Z_ref+T_21(0,3);
+            double Y_cur = T_21(1,0)*X_ref+T_21(1,1)*Y_ref+T_21(1,2)*Z_ref+T_21(1,3);
+            double Z_cur = T_21(2,0)*X_ref+T_21(2,1)*Y_ref+T_21(2,2)*Z_ref+T_21(2,3);
 
             float u =0, v = 0;
             u = (float)((X_cur*fx)/Z_cur+cx);
             v = (float)((Y_cur*fy)/Z_cur+cy);
     
-            if(u-half_path_size < 0 || u+half_path_size >= img2.cols || v-half_path_size < 0 || v+half_path_size >= img2.rows) continue;
+            if(u-half_patch_size < 0 || u+half_patch_size >= img2.cols || v-half_patch_size < 0 || v+half_patch_size >= img2.rows) continue;
 
             nGood++;
             goodProjection.push_back(Eigen::Vector2d(u, v));
@@ -154,7 +163,7 @@ void DirectPoseEstimationSingleLayer(
                 for (int y = -half_patch_size; y < half_patch_size; y++) {
                     
                     double error =0;
-                    error = GetPixelValue(img1, pixels_ref[i][0]+x, pixels_ref[i][1]+y)-GetPixelValue(img2, u+x, v+y);
+                    error = GetPixelValue(img1, px_ref[i][0]+x, px_ref[i][1]+y)-GetPixelValue(img2, u+x, v+y);
 
                     Matrix26d J_pixel_xi;
                     Eigen::Vector2d J_img_pixel;
@@ -190,7 +199,7 @@ void DirectPoseEstimationSingleLayer(
         // TODO START YOUR CODE HERE
         Vector6d update;
         update = H.ldlt().solve(b);
-        T21 = Sophus::SE3::exp(update) * T21;
+        T21 = Sophus::SE3d::exp(update) * T21;
         // END YOUR CODE HERE
 
         cost /= nGood;
@@ -232,7 +241,7 @@ void DirectPoseEstimationMultiLayer(
         const cv::Mat &img2,
         const VecVector2d &px_ref,
         const vector<double> depth_ref,
-        Sophus::SE3 &T21
+        Sophus::SE3d &T21
 ) {
 
     // parameters
