@@ -16,9 +16,9 @@ double fx = 718.856, fy = 718.856, cx = 607.1928, cy = 185.2157;
 // 基线
 double baseline = 0.573;
 // paths
-string left_file = "./left.png";
-string disparity_file = "./disparity.png";
-boost::format fmt_others("./%06d.png");    // other files
+string left_file = "../include/left.png";
+string disparity_file = "./include/disparity.png";
+boost::format fmt_others("../include/%06d.png");    // other files
 
 // useful typedefs
 typedef Eigen::Matrix<double, 6, 6> Matrix6d;
@@ -132,22 +132,53 @@ void DirectPoseEstimationSingleLayer(
 
             // compute the projection in the second image
             // TODO START YOUR CODE HERE
+            double X_ref = depth_ref[i]*(px_ref[i][0]-cx)/fx;
+            double Y_ref = depth_ref[i]*(py_ref[i][1]-cy)/fy;
+            double Z_ref = depth_ref[i];
+            Matrix4d T_21 = T21.matrix();
+            X_cur = T_21(0,0)*X_ref+T_21(0,1)*Y_ref+T_21(0,2)*Z_ref+T_21(0,3);
+            Y_cur = T_21(1,0)*X_ref+T_21(1,1)*Y_ref+T_21(1,2)*Z_ref+T_21(1,3);
+            Z_cur = T_21(2,0)*X_ref+T_21(2,1)*Y_ref+T_21(2,2)*Z_ref+T_21(2,3);
+
             float u =0, v = 0;
+            u = (float)((X_cur*fx)/Z_cur+cx);
+            v = (float)((Y_cur*fy)/Z_cur+cy);
+    
+            if(u-half_path_size < 0 || u+half_path_size >= img2.cols || v-half_path_size < 0 || v+half_path_size >= img2.rows) continue;
+
             nGood++;
             goodProjection.push_back(Eigen::Vector2d(u, v));
 
             // and compute error and jacobian
             for (int x = -half_patch_size; x < half_patch_size; x++)
                 for (int y = -half_patch_size; y < half_patch_size; y++) {
-
+                    
                     double error =0;
+                    error = GetPixelValue(img1, pixels_ref[i][0]+x, pixels_ref[i][1]+y)-GetPixelValue(img2, u+x, v+y);
 
-                    Matrix26d J_pixel_xi;   // pixel to \xi in Lie algebra
-                    Eigen::Vector2d J_img_pixel;    // image gradients
+                    Matrix26d J_pixel_xi;
+                    Eigen::Vector2d J_img_pixel;
+
+                    // This part is the gradient of I_{2}
+                    J_img_pixel[0] = (GetPixelValue(img2, u+x+1, v+y)-GetPixelValue(img2, u+x-1, v+y))/2;
+                    J_img_pixel[1] = (GetPixelValue(img2, u+x, v+y+1)-GetPixelValue(img2, u+x, v+y-1))/2;
+
+                    J_pixel_xi(0, 0) = fx/Z_cur;
+                    J_pixel_xi(0, 1) = 0;
+                    J_pixel_xi(0, 2) = -(fx*X_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(0, 3) = -(fx*X_cur*Y_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(0, 4) = fx+(fx*X_cur*X_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(0, 5) = -(fx*Y_cur)/Z_cur;
+
+                    J_pixel_xi(1, 0) = 0;
+                    J_pixel_xi(1, 1) = fy/Z_cur;
+                    J_pixel_xi(1, 2) = -(fy*Y_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(1, 3) = -fy-(fy*Y_cur*Y_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(1, 4) = (fy*X_cur*Y_cur)/(Z_cur*Z_cur);
+                    J_pixel_xi(1, 5) = (fy*X_cur)/Z_cur;
 
                     // total jacobian
-                    Vector6d J=0;
-
+                    Vector6d J=-1*(J_img_pixel.transpose()*J_pixel_xi).transpose();
                     H += J * J.transpose();
                     b += -error * J;
                     cost += error * error;
@@ -158,6 +189,7 @@ void DirectPoseEstimationSingleLayer(
         // solve update and put it into estimation
         // TODO START YOUR CODE HERE
         Vector6d update;
+        update = H.ldlt().solve(b);
         T21 = Sophus::SE3::exp(update) * T21;
         // END YOUR CODE HERE
 
@@ -223,7 +255,10 @@ void DirectPoseEstimationMultiLayer(
 
         // TODO START YOUR CODE HERE
         // scale fx, fy, cx, cy in different pyramid levels
-
+        fx = fxG*scales[level];
+        fy = fyG*scales[level];
+        cx = cxG*scales[level];
+        cy = cyG*scales[level];
         // END YOUR CODE HERE
         DirectPoseEstimationSingleLayer(pyr1[level], pyr2[level], px_ref_pyr, depth_ref, T21);
     }
