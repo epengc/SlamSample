@@ -16,6 +16,7 @@
 using namespace std;
 using namespace Eigen;
 using namespace Sophus;
+using namespace cv;
 
 typedef vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> VecVector2d;
 
@@ -153,7 +154,9 @@ void DirectPoseEstimationSingleLayer(
             u = (float)((X_cur*fx)/Z_cur+cx);
             v = (float)((Y_cur*fy)/Z_cur+cy);
     
-            if(u-half_patch_size < 0 || u+half_patch_size >= img2.cols || v-half_patch_size < 0 || v+half_patch_size >= img2.rows) continue;
+            if(u-half_patch_size < 0 || u+half_patch_size >= img2.cols || v-half_patch_size < 0 || v+half_patch_size >= img2.rows){
+                continue;
+            }
 
             nGood++;
             goodProjection.push_back(Eigen::Vector2d(u, v));
@@ -209,10 +212,10 @@ void DirectPoseEstimationSingleLayer(
             cout << "update is nan" << endl;
             break;
         }
-        if (iter > 0 && cost > lastCost) {
-            cout << "cost increased: " << cost << ", " << lastCost << endl;
-            break;
-        }
+       // if (iter > 0 && cost > lastCost) {
+       //     cout << "cost increased: " << cost << ", " << lastCost << endl;
+       //     break;
+       // }
         lastCost = cost;
         cout << "cost = " << cost << ", good = " << nGood << endl;
     }
@@ -252,7 +255,13 @@ void DirectPoseEstimationMultiLayer(
     // create pyramids
     vector<cv::Mat> pyr1, pyr2; // image pyramids
     // TODO START YOUR CODE HERE
-
+    for(size_t i=0; i<pyramids; i++){
+        Mat img1_temp, img2_temp;
+        resize(img1, img1_temp, Size(img1.cols*scales[i], img1.rows*scales[i]));
+        resize(img2, img2_temp, Size(img2.cols*scales[i], img2.rows*scales[i]));
+        pyr1.push_back(img1_temp);
+        pyr2.push_back(img2_temp);
+    }
     // END YOUR CODE HERE
 
     double fxG = fx, fyG = fy, cxG = cx, cyG = cy;  // backup the old values
