@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/common.h
+
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/g2o_bundle.cpp
+g2o/core/base_vertex.h
+-
+g2o/core/base_binary_edge.h
+-
+g2o/core/block_solver.h
+-
+g2o/core/optimization_algorithm_levenberg.h
+-
+g2o/solvers/csparse/linear_solver_csparse.h
+-
+g2o/core/robust_kernel_impl.h
+-
+iostream
+-
+common.h
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/common.h
+sophus/se3.hpp
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/sophus/se3.hpp
+ceres/rotation.h
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/ceres/rotation.h
+glog/logging.h
+/home/epengc/Documents/SlamSample/ch7/g2oBandle/src/glog/logging.h
+

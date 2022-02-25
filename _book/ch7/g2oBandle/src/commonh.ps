@@ -1,0 +1,1075 @@
+%!PS-Adobe-3.0
+%%Title: common.h
+%%For: epengc
+%%Creator: VIM - Vi IMproved 8.1 (2018 May 18)
+%%CreationDate: Tue Dec 21 23:31:47 2021
+%%DocumentData: Clean8Bit
+%%Orientation: Portrait
+%%Pages: (atend)
+%%PageOrder: Ascend
+%%BoundingBox: 18 42 528 752
+%%DocumentMedia: letter 612 792 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%DocumentSuppliedResources: procset VIM-Prolog 1.4 1
+%%+ encoding VIM-latin1 1.0 0
+%%Requirements: duplex collate color
+%%EndComments
+%%BeginDefaults
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%PageMedia: letter
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset VIM-Prolog
+%%BeginDocument: /usr/share/vim/vim81/print/prolog.ps
+%!PS-Adobe-3.0 Resource-ProcSet
+%%Title: VIM-Prolog
+%%Version: 1.4 1
+%%EndComments
+% Editing of this file is NOT RECOMMENDED.  You run a very good risk of causing
+% all PostScript printing from VIM failing if you do.  PostScript is not called
+% a write-only language for nothing!
+/packedarray where not{userdict begin/setpacking/pop load def/currentpacking
+false def end}{pop}ifelse/CP currentpacking def true setpacking
+/bd{bind def}bind def/ld{load def}bd/ed{exch def}bd/d/def ld
+/db{dict begin}bd/cde{currentdict end}bd
+/T true d/F false d
+/SO null d/sv{/SO save d}bd/re{SO restore}bd
+/L2 systemdict/languagelevel 2 copy known{get exec}{pop pop 1}ifelse 2 ge d
+/m/moveto ld/s/show ld /ms{m s}bd /g/setgray ld/r/setrgbcolor ld/sp{showpage}bd
+/gs/gsave ld/gr/grestore ld/cp/currentpoint ld
+/ul{gs UW setlinewidth cp UO add 2 copy newpath m 3 1 roll add exch lineto
+stroke gr}bd
+/bg{gs r cp BO add 4 -2 roll rectfill gr}bd
+/sl{90 rotate 0 exch translate}bd
+L2{
+/sspd{mark exch{setpagedevice}stopped cleartomark}bd
+/nc{1 db/NumCopies ed cde sspd}bd
+/sps{3 db/Orientation ed[3 1 roll]/PageSize ed/ImagingBBox null d cde sspd}bd
+/dt{2 db/Tumble ed/Duplex ed cde sspd}bd
+/c{1 db/Collate ed cde sspd}bd
+}{
+/nc{/#copies ed}bd
+/sps{statusdict/setpage get exec}bd
+/dt{statusdict/settumble 2 copy known{get exec}{pop pop pop}ifelse
+statusdict/setduplexmode 2 copy known{get exec}{pop pop pop}ifelse}bd
+/c{pop}bd
+}ifelse
+/ffs{findfont exch scalefont d}bd/sf{setfont}bd
+/ref{1 db findfont dup maxlength dict/NFD ed{exch dup/FID ne{exch NFD 3 1 roll
+put}{pop pop}ifelse}forall/Encoding findresource dup length 256 eq{NFD/Encoding
+3 -1 roll put}{pop}ifelse NFD dup/FontType get 3 ne{/CharStrings}{/CharProcs}
+ifelse 2 copy known{2 copy get dup maxlength dict copy[/questiondown/space]{2
+copy known{2 copy get 2 index/.notdef 3 -1 roll put pop exit}if pop}forall put
+}{pop pop}ifelse dup NFD/FontName 3 -1 roll put NFD definefont pop end}bd
+CP setpacking
+(\004)cvn{}bd
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%BeginResource: encoding VIM-latin1
+%%BeginDocument: /usr/share/vim/vim81/print/latin1.ps
+%!PS-Adobe-3.0 Resource-Encoding
+%%Title: VIM-latin1
+%%Version: 1.0 0
+%%EndComments
+/VIM-latin1[
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quotesingle
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash
+/zero /one /two /three /four /five /six /seven
+/eight /nine /colon /semicolon /less /equal /greater /question
+/at /A /B /C /D /E /F /G
+/H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+/grave /a /b /c /d /e /f /g
+/h /i /j /k /l /m /n /o
+/p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis]
+/Encoding defineresource pop
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%EndProlog
+%%BeginSetup
+612 792 0 sps
+1 nc
+T F dt
+T c
+%%IncludeResource: font Courier
+/_F0 /VIM-latin1 /Courier ref
+/F0 10 /_F0 ffs
+%%IncludeResource: font Courier-Bold
+/_F1 /VIM-latin1 /Courier-Bold ref
+/F1 10 /_F1 ffs
+%%IncludeResource: font Courier-Oblique
+/_F2 /VIM-latin1 /Courier-Oblique ref
+/F2 10 /_F2 ffs
+%%IncludeResource: font Courier-BoldOblique
+/_F3 /VIM-latin1 /Courier-BoldOblique ref
+/F3 10 /_F3 ffs
+/UO -1 d
+/UW 0.5 d
+/BO -2.5 d
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(common.h                                                                               Page 1)18.36 744.9 ms
+F0 sf
+0.498 0.498 0 r
+(     1)18.36 724.9 ms
+0.376 0 0 r
+(#pragma once)66.36 724.9 ms
+0.498 0.498 0 r
+(     2)18.36 714.9 ms
+(     3)18.36 704.9 ms
+0 0.498 0.498 r
+(/// ¿¿¿¿¿BAL dataset)66.36 704.9 ms
+0.498 0.498 0 r
+(     4)18.36 694.9 ms
+0.376 0 0 r
+(class)66.36 694.9 ms
+0 g
+( BALProblem {)s
+0.498 0.498 0 r
+(     5)18.36 684.9 ms
+0 0.498 0 r
+(public)66.36 684.9 ms
+0 g
+(:)s
+0.498 0.498 0 r
+(     6)18.36 674.9 ms
+0 g
+(    )66.36 674.9 ms
+0 0.498 0.498 r
+(/// load bal data from text file)s
+0.498 0.498 0 r
+(     7)18.36 664.9 ms
+0 g
+(    )66.36 664.9 ms
+0.376 0 0 r
+(explicit)s
+0 g
+( )s
+0.376 g
+(BALProblem)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.251 0.251 0 r
+(std)s
+0 g
+(::)s
+0.376 0 0 r
+(string)s
+0 g
+( &filename, )s
+0.376 0 0 r
+(bool)s
+0 g
+( use_quaternions = )s
+0.498 0.125 0.498 r
+(false)s
+0 g
+(\);)s
+0.498 0.498 0 r
+(     8)18.36 654.9 ms
+(     9)18.36 644.9 ms
+0 g
+(    ~)66.36 644.9 ms
+0.376 g
+(BALProblem)s
+0 g
+(\(\) {)s
+0.498 0.498 0 r
+(    10)18.36 634.9 ms
+0 g
+(        )66.36 634.9 ms
+0 0.498 0 r
+(delete)s
+0 g
+([] point_index_;)s
+0.498 0.498 0 r
+(    11)18.36 624.9 ms
+0 g
+(        )66.36 624.9 ms
+0 0.498 0 r
+(delete)s
+0 g
+([] camera_index_;)s
+0.498 0.498 0 r
+(    12)18.36 614.9 ms
+0 g
+(        )66.36 614.9 ms
+0 0.498 0 r
+(delete)s
+0 g
+([] observations_;)s
+0.498 0.498 0 r
+(    13)18.36 604.9 ms
+0 g
+(        )66.36 604.9 ms
+0 0.498 0 r
+(delete)s
+0 g
+([] parameters_;)s
+0.498 0.498 0 r
+(    14)18.36 594.9 ms
+0 g
+(    })66.36 594.9 ms
+0.498 0.498 0 r
+(    15)18.36 584.9 ms
+(    16)18.36 574.9 ms
+0 g
+(    )66.36 574.9 ms
+0 0.498 0.498 r
+(/// save results to text file)s
+0.498 0.498 0 r
+(    17)18.36 564.9 ms
+0 g
+(    )66.36 564.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(WriteToFile)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.251 0.251 0 r
+(std)s
+0 g
+(::)s
+0.376 0 0 r
+(string)s
+0 g
+( &filename\) )s
+0.376 0 0 r
+(const)s
+0 g
+(;)s
+0.498 0.498 0 r
+(    18)18.36 554.9 ms
+(    19)18.36 544.9 ms
+0 g
+(    )66.36 544.9 ms
+0 0.498 0.498 r
+(/// save results to ply pointcloud)s
+0.498 0.498 0 r
+(    20)18.36 534.9 ms
+0 g
+(    )66.36 534.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(WriteToPLYFile)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.251 0.251 0 r
+(std)s
+0 g
+(::)s
+0.376 0 0 r
+(string)s
+0 g
+( &filename\) )s
+0.376 0 0 r
+(const)s
+0 g
+(;)s
+0.498 0.498 0 r
+(    21)18.36 524.9 ms
+(    22)18.36 514.9 ms
+0 g
+(    )66.36 514.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(Normalize)s
+0 g
+(\(\);)s
+0.498 0.498 0 r
+(    23)18.36 504.9 ms
+(    24)18.36 494.9 ms
+0 g
+(    )66.36 494.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(Perturb)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( rotation_sigma,)s
+0.498 0.498 0 r
+(    25)18.36 484.9 ms
+0 g
+(                 )66.36 484.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( translation_sigma,)s
+0.498 0.498 0 r
+(    26)18.36 474.9 ms
+0 g
+(                 )66.36 474.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( point_sigma\);)s
+0.498 0.498 0 r
+(    27)18.36 464.9 ms
+(    28)18.36 454.9 ms
+0 g
+(    )66.36 454.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(camera_block_size)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( use_quaternions_ ? )s
+0.498 0.125 0.498 r
+(10)s
+0 g
+( : )s
+0.498 0.125 0.498 r
+(9)s
+0 g
+(; })s
+0.498 0.498 0 r
+(    29)18.36 444.9 ms
+(    30)18.36 434.9 ms
+0 g
+(    )66.36 434.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(point_block_size)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( )s
+0.498 0.125 0.498 r
+(3)s
+0 g
+(; })s
+0.498 0.498 0 r
+(    31)18.36 424.9 ms
+(    32)18.36 414.9 ms
+0 g
+(    )66.36 414.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(num_cameras)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( num_cameras_; })s
+0.498 0.498 0 r
+(    33)18.36 404.9 ms
+(    34)18.36 394.9 ms
+0 g
+(    )66.36 394.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(num_points)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( num_points_; })s
+0.498 0.498 0 r
+(    35)18.36 384.9 ms
+(    36)18.36 374.9 ms
+0 g
+(    )66.36 374.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(num_observations)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( num_observations_; })s
+0.498 0.498 0 r
+(    37)18.36 364.9 ms
+(    38)18.36 354.9 ms
+0 g
+(    )66.36 354.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( )s
+0.376 g
+(num_parameters)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( num_parameters_; })s
+0.498 0.498 0 r
+(    39)18.36 344.9 ms
+(    40)18.36 334.9 ms
+0 g
+(    )66.36 334.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(int)s
+0 g
+( *)s
+0.376 g
+(point_index)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( point_index_; })s
+0.498 0.498 0 r
+(    41)18.36 324.9 ms
+(    42)18.36 314.9 ms
+0 g
+(    )66.36 314.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(int)s
+0 g
+( *)s
+0.376 g
+(camera_index)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( camera_index_; })s
+0.498 0.498 0 r
+(    43)18.36 304.9 ms
+(    44)18.36 294.9 ms
+0 g
+(    )66.36 294.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(observations)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( observations_; })s
+0.498 0.498 0 r
+(    45)18.36 284.9 ms
+(    46)18.36 274.9 ms
+0 g
+(    )66.36 274.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(parameters)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( parameters_; })s
+0.498 0.498 0 r
+(    47)18.36 264.9 ms
+(    48)18.36 254.9 ms
+0 g
+(    )66.36 254.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(cameras)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( parameters_; })s
+0.498 0.498 0 r
+(    49)18.36 244.9 ms
+(    50)18.36 234.9 ms
+0 g
+(    )66.36 234.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(points)s
+0 g
+(\(\) )s
+0.376 0 0 r
+(const)s
+0 g
+( { )s
+0 0.498 0 r
+(return)s
+0 g
+( parameters_ + )s
+0.376 g
+(camera_block_size)s
+0 g
+(\(\) * num_cam)s
+(eras_; })66.36 224.9 ms
+0.498 0.498 0 r
+(    51)18.36 214.9 ms
+(    52)18.36 204.9 ms
+0 g
+(    )66.36 204.9 ms
+0 0.498 0.498 r
+(/// camera¿¿¿¿¿¿¿)s
+0.498 0.498 0 r
+(    53)18.36 194.9 ms
+0 g
+(    )66.36 194.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(mutable_cameras)s
+0 g
+(\(\) { )s
+0 0.498 0 r
+(return)s
+0 g
+( parameters_; })s
+0.498 0.498 0 r
+(    54)18.36 184.9 ms
+(    55)18.36 174.9 ms
+0 g
+(    )66.36 174.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(mutable_points)s
+0 g
+(\(\) { )s
+0 0.498 0 r
+(return)s
+0 g
+( parameters_ + )s
+0.376 g
+(camera_block_size)s
+0 g
+(\(\) * num_cameras)s
+(_; })66.36 164.9 ms
+0.498 0.498 0 r
+(    56)18.36 154.9 ms
+(    57)18.36 144.9 ms
+0 g
+(    )66.36 144.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(mutable_camera_for_observation)s
+0 g
+(\()s
+0.376 0 0 r
+(int)s
+0 g
+( i\) {)s
+0.498 0.498 0 r
+(    58)18.36 134.9 ms
+0 g
+(        )66.36 134.9 ms
+0 0.498 0 r
+(return)s
+0 g
+( )s
+0.376 g
+(mutable_cameras)s
+0 g
+(\(\) + camera_index_[i] * )s
+0.376 g
+(camera_block_size)s
+0 g
+(\(\);)s
+0.498 0.498 0 r
+(    59)18.36 124.9 ms
+0 g
+(    })66.36 124.9 ms
+0.498 0.498 0 r
+(    60)18.36 114.9 ms
+(    61)18.36 104.9 ms
+0 g
+(    )66.36 104.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(mutable_point_for_observation)s
+0 g
+(\()s
+0.376 0 0 r
+(int)s
+0 g
+( i\) {)s
+0.498 0.498 0 r
+(    62)18.36 94.9 ms
+0 g
+(        )66.36 94.9 ms
+0 0.498 0 r
+(return)s
+0 g
+( )s
+0.376 g
+(mutable_points)s
+0 g
+(\(\) + point_index_[i] * )s
+0.376 g
+(point_block_size)s
+0 g
+(\(\);)s
+0.498 0.498 0 r
+(    63)18.36 84.9 ms
+0 g
+(    })66.36 84.9 ms
+0.498 0.498 0 r
+(    64)18.36 74.9 ms
+(    65)18.36 64.9 ms
+0 g
+(    )66.36 64.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(camera_for_observation)s
+0 g
+(\()s
+0.376 0 0 r
+(int)s
+0 g
+( i\) )s
+0.376 0 0 r
+(const)s
+0 g
+( {)s
+0.498 0.498 0 r
+(    66)18.36 54.9 ms
+0 g
+(        )66.36 54.9 ms
+0 0.498 0 r
+(return)s
+0 g
+( )s
+0.376 g
+(cameras)s
+0 g
+(\(\) + camera_index_[i] * )s
+0.376 g
+(camera_block_size)s
+0 g
+(\(\);)s
+0.498 0.498 0 r
+(    67)18.36 44.9 ms
+0 g
+(    })66.36 44.9 ms
+re sp
+%%PageTrailer
+%%Page: 2 2
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(common.h                                                                               Page 2)18.36 744.9 ms
+F0 sf
+0.498 0.498 0 r
+(    68)18.36 724.9 ms
+(    69)18.36 714.9 ms
+0 g
+(    )66.36 714.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *)s
+0.376 g
+(point_for_observation)s
+0 g
+(\()s
+0.376 0 0 r
+(int)s
+0 g
+( i\) )s
+0.376 0 0 r
+(const)s
+0 g
+( {)s
+0.498 0.498 0 r
+(    70)18.36 704.9 ms
+0 g
+(        )66.36 704.9 ms
+0 0.498 0 r
+(return)s
+0 g
+( )s
+0.376 g
+(points)s
+0 g
+(\(\) + point_index_[i] * )s
+0.376 g
+(point_block_size)s
+0 g
+(\(\);)s
+0.498 0.498 0 r
+(    71)18.36 694.9 ms
+0 g
+(    })66.36 694.9 ms
+0.498 0.498 0 r
+(    72)18.36 684.9 ms
+(    73)18.36 674.9 ms
+0 0.498 0 r
+(private)66.36 674.9 ms
+0 g
+(:)s
+0.498 0.498 0 r
+(    74)18.36 664.9 ms
+0 g
+(    )66.36 664.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(CameraToAngelAxisAndCenter)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *camera,)s
+0.498 0.498 0 r
+(    75)18.36 654.9 ms
+0 g
+(                                    )66.36 654.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *angle_axis,)s
+0.498 0.498 0 r
+(    76)18.36 644.9 ms
+0 g
+(                                    )66.36 644.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *center\) )s
+0.376 0 0 r
+(const)s
+0 g
+(;)s
+0.498 0.498 0 r
+(    77)18.36 634.9 ms
+(    78)18.36 624.9 ms
+0 g
+(    )66.36 624.9 ms
+0.376 0 0 r
+(void)s
+0 g
+( )s
+0.376 g
+(AngleAxisAndCenterToCamera)s
+0 g
+(\()s
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *angle_axis,)s
+0.498 0.498 0 r
+(    79)18.36 614.9 ms
+0 g
+(                                    )66.36 614.9 ms
+0.376 0 0 r
+(const)s
+0 g
+( )s
+0.376 0 0 r
+(double)s
+0 g
+( *center,)s
+0.498 0.498 0 r
+(    80)18.36 604.9 ms
+0 g
+(                                    )66.36 604.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *camera\) )s
+0.376 0 0 r
+(const)s
+0 g
+(;)s
+0.498 0.498 0 r
+(    81)18.36 594.9 ms
+(    82)18.36 584.9 ms
+0 g
+(    )66.36 584.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( num_cameras_;)s
+0.498 0.498 0 r
+(    83)18.36 574.9 ms
+0 g
+(    )66.36 574.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( num_points_;)s
+0.498 0.498 0 r
+(    84)18.36 564.9 ms
+0 g
+(    )66.36 564.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( num_observations_;)s
+0.498 0.498 0 r
+(    85)18.36 554.9 ms
+0 g
+(    )66.36 554.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( num_parameters_;)s
+0.498 0.498 0 r
+(    86)18.36 544.9 ms
+0 g
+(    )66.36 544.9 ms
+0.376 0 0 r
+(bool)s
+0 g
+( use_quaternions_;)s
+0.498 0.498 0 r
+(    87)18.36 534.9 ms
+(    88)18.36 524.9 ms
+0 g
+(    )66.36 524.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( *point_index_;      )s
+0 0.498 0.498 r
+(// ¿¿observation¿¿¿point index)s
+0.498 0.498 0 r
+(    89)18.36 514.9 ms
+0 g
+(    )66.36 514.9 ms
+0.376 0 0 r
+(int)s
+0 g
+( *camera_index_;     )s
+0 0.498 0.498 r
+(// ¿¿observation¿¿¿camera index)s
+0.498 0.498 0 r
+(    90)18.36 504.9 ms
+0 g
+(    )66.36 504.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *observations_;)s
+0.498 0.498 0 r
+(    91)18.36 494.9 ms
+0 g
+(    )66.36 494.9 ms
+0.376 0 0 r
+(double)s
+0 g
+( *parameters_;)s
+0.498 0.498 0 r
+(    92)18.36 484.9 ms
+0 g
+(};)66.36 484.9 ms
+re sp
+%%PageTrailer
+%%Trailer
+%%Pages: 2
+%%EOF
+
