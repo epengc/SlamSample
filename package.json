@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "graceful-fs": "^4.2.9"
+  },
+  "dependencies": {
+    "mermaid": "^8.14.0"
   }
 }
